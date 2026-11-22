@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parto e Puerpério</title>
+<meta name="description" content="Atuação da fisioterapia no parto e no puerpério.">
+<meta name="theme-color" content="#ff4e58">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23fcd3cd'/%3E%3Cpath d='M32 50C14 37 12 27 12 22a10 10 0 0 1 20-3 10 10 0 0 1 20 3c0 5-2 15-20 28z' fill='%23ff4e58'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Parto e Puerpério — Atuação da Fisioterapia">
+<meta property="og:description" content="Fases do parto vaginal e cesárea, diástase, avaliação, orientações e o papel da fisioterapia no puerpério.">
+<meta property="og:url" content="https://handyedev.github.io/parto-puerperio-fisioterapia/">
+<meta property="og:image" content="https://handyedev.github.io/parto-puerperio-fisioterapia/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ilustração de uma mãe com o bebê no colo e o título Parto e Puerpério">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@1,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --rosa:#ff4e58; --coral:#ef7f7c; --pill:#fcd3cd; --bege:#efcdb3; --borda:#ff9798;
+  --texto:#1f1a1a; --fundo:#fbeaea; --card:rgba(255,255,255,.55);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--texto);background:var(--fundo) url(img/fundo.webp) center/cover fixed;line-height:1.55}
+h1,h2,h3{font-family:"Lobster Two",cursive;font-style:italic;font-weight:700;color:var(--rosa);margin:0 0 .6em;line-height:1.1}
+h2{font-size:clamp(2rem,5vw,3.4rem);text-align:center}
+h3{font-size:1.6rem}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+
+nav{position:sticky;top:0;z-index:10;background:rgba(255,240,240,.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--borda);display:flex;gap:.25rem;overflow-x:auto;padding:.5rem 1rem;scrollbar-width:thin}
+
+nav a{white-space:nowrap;text-decoration:none;padding:.35rem .8rem;border-radius:999px;font-size:.9rem}
+nav a:hover,nav a:focus-visible{background:var(--pill);outline:none}
+
+section{position:relative;padding:4.5rem 1.25rem;overflow:hidden}
+.wrap{max-width:1000px;margin:0 auto;position:relative;z-index:1}
+.deco{position:absolute;pointer-events:none;z-index:0;opacity:.95}
+.deco.br{right:0;bottom:0;width:min(180px,28vw)}
+.deco.r{right:0;top:2rem;width:min(95px,15vw)}
+.deco.l{left:0;top:3rem;width:min(110px,16vw)}
+.deco.lb{left:0;bottom:0;width:min(70px,12vw)}
+
+/* ---------- LANDING (única parte animada) ---------- */
+#inicio{min-height:calc(100svh - 48px);display:grid;place-items:center;text-align:center}
+#inicio .wrap{display:grid;grid-template-columns:1fr 1.2fr;align-items:center;gap:2rem;max-width:1100px}
+#inicio h1{font-family:Georgia,serif;font-style:normal;font-size:clamp(2.6rem,8vw,5.2rem);line-height:1.35;margin:0 0 1.5rem}
+#inicio h1 span{display:block}
+#inicio p{font-family:Georgia,serif;margin:.1rem 0;font-size:1.1rem;text-align:left;display:inline-block}
+#inicio .titulo{text-align:center}
+.hero-mae{width:min(420px,100%);justify-self:center}
+.hero-eco{position:absolute;width:clamp(70px,9vw,120px);top:12%;left:14%}
+.hero-flor{position:absolute;right:0;bottom:0;width:min(220px,28vw)}
+.float{animation:flutua 6s ease-in-out infinite;will-change:transform}
+.float.b{animation-duration:7.5s;animation-delay:-2s}
+.float.c{animation-duration:9s;animation-delay:-4s;animation-name:balanca}
+@keyframes flutua{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(0,-10px,0)}}
+@keyframes balanca{0%,100%{transform:rotate(-1.5deg) translateY(0)}50%{transform:rotate(1.5deg) translateY(-6px)}}
+.par{transition:transform .25s ease-out;will-change:transform}
+@media (prefers-reduced-motion:reduce){.float,.par{animation:none!important;transition:none!important;transform:none!important}}
+@media (max-width:760px){#inicio .wrap{grid-template-columns:1fr}.hero-mae{order:2;width:min(300px,80%)}}
+
+/* ---------- conteúdo ---------- */
+.card{background:var(--card);border-radius:18px;padding:1.5rem;box-shadow:0 2px 14px rgba(200,100,100,.12)}
+.duo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:2rem;align-items:center}
+.duo.inv{grid-template-columns:minmax(0,1.6fr) minmax(0,1fr)}
+@media (max-width:760px){.duo,.duo.inv{grid-template-columns:1fr}}
+.moldura{border:2px solid #222;border-radius:14px;background:#fff;overflow:hidden;max-width:300px;margin:auto}
+.photo{border-radius:10px;overflow:hidden;background:#fff;margin:auto}
+.just{text-align:justify;hyphens:auto}
+.hl{color:var(--rosa)}
+.fases{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem}
+.fases figure{margin:0;display:grid;grid-template-columns:1fr 1fr;gap:.75rem;align-items:center;text-align:center}
+.fases figcaption{font-size:1.1rem}
+@media (max-width:760px){.fases{grid-template-columns:1fr}}
+ul.lista{padding-left:1.2rem;margin:.4rem 0}
+ul.lista li{margin:.35rem 0}
+.grid-pills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.9rem 1.5rem;list-style:none;margin:0;padding:0}
+@media (max-width:640px){.grid-pills{grid-template-columns:1fr}}
+.grid-pills li{display:flex;align-items:center;gap:.7rem}
+.grid-pills img{width:36px;flex:none}
+.grid-pills span{flex:1;background:var(--pill);padding:.85rem 1rem;border-radius:18px 14px 20px 12px;text-align:center}
+.grid-pills li:nth-child(4n+2) span,.grid-pills li:nth-child(4n+3) span{background:var(--bege)}
+.pills-col{display:grid;gap:.9rem;list-style:none;margin:0;padding:0}
+.pills-col li{display:flex;align-items:center;gap:.7rem}
+.pills-col img{width:36px;flex:none}
+.pills-col span{flex:1;background:var(--pill);padding:.85rem 1rem;border-radius:18px 14px 20px 12px;text-align:center}
+.pills-col li:nth-child(even) span{background:var(--bege)}
+.scroll{overflow-x:auto;border-radius:6px}
+table{width:100%;border-collapse:collapse;background:var(--card)}
+th{background:var(--coral);color:#1a1a1a;padding:.9rem;font-weight:400;font-size:1.05rem}
+
+td,th{border:1.5px solid var(--borda);vertical-align:top}
+td{padding:.8rem .9rem}
+table.preto td,table.preto th{border-color:var(--texto)}
+table.preto th{background:transparent;color:var(--texto);font-weight:700}
+table.preto td{text-align:center;vertical-align:middle}
+td ul{margin:0;padding-left:1.1rem}
+.min{min-width:640px}
+.script{font-family:"Lobster Two",cursive;font-style:italic;font-weight:700;color:var(--rosa)}
+.lista-script{list-style:disc;font-size:2rem;color:var(--rosa);font-family:"Lobster Two",cursive;font-style:italic;font-weight:700}
+.exerc th{font-family:"Lobster Two",cursive;font-style:italic;font-weight:700;font-size:2rem;color:#1a1a1a;position:relative;height:130px}
+.exerc th img{position:absolute;right:6px;bottom:0;height:80px;width:auto}
+@media (max-width:900px){
+  .exerc th{height:auto;font-size:1.5rem;padding-bottom:96px}
+  .exerc th img{right:auto;left:50%;transform:translateX(-50%);max-width:90%;height:auto;max-height:80px;width:auto}
+}
+.exerc td li{margin-bottom:1rem}
+.aval h4{color:var(--rosa);font-weight:400;margin:1.1rem 0 .15rem;text-align:center;font-size:1.05rem}
+.aval p{margin:0}
+.orient{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem 2rem}
+@media (max-width:760px){.orient{grid-template-columns:1fr}}
+.orient div{display:flex;gap:1rem;align-items:flex-start}
+.orient img{width:88px;flex:none}
+.orient p{margin:0}
+.inst{display:grid;grid-template-columns:auto 1fr;gap:.5rem 2rem;font-size:1.25rem;justify-content:center}
+.inst dt{font-weight:400}
+.inst dd{margin:0}
+.conclusao p{font-family:Georgia,serif;font-size:clamp(1.2rem,2.5vw,1.6rem);text-align:center;max-width:720px;margin:2rem auto}
+#artigo .wrap{max-width:1240px}
+.artigo-comp{display:flex;flex-direction:column;align-items:center;gap:1.25rem;margin:0 auto 1.25rem}
+.artigo-comp figure{margin:0;width:100%;max-width:1180px;text-align:center}
+.artigo-img{width:100%;border-radius:8px;box-shadow:0 2px 12px rgba(0,0,0,.15)}
+.artigo-comp figcaption{display:inline-block;margin-top:.6rem;padding:.15rem .9rem;border-radius:999px;background:var(--pill);font-weight:700;font-size:.95rem;letter-spacing:.04em}
+.lang-toggle{display:flex;gap:.4rem;padding:.3rem;border-radius:999px;background:var(--pill)}
+.lang-toggle[hidden]{display:none}
+.lang-toggle button{font:inherit;font-weight:700;font-size:1.05rem;letter-spacing:.04em;border:0;border-radius:999px;padding:.55rem 1.6rem;background:transparent;color:inherit;cursor:pointer}
+.lang-toggle button[aria-pressed="true"]{background:var(--rosa);color:#fff}
+.lang-toggle button:focus-visible{outline:3px solid var(--coral);outline-offset:2px}
+.ref{text-align:center;font-weight:700;font-size:.95rem;max-width:850px;margin:0 auto}
+footer{text-align:center;padding:2rem 1rem;font-size:.9rem;opacity:.8}
+/* ---------- acessibilidade e navegação ---------- */
+.skip{position:absolute;left:.75rem;top:-4rem;z-index:20;background:var(--rosa);color:#fff;padding:.6rem 1rem;border-radius:10px;font-weight:700;text-decoration:none}
+.skip:focus{top:.6rem;outline:3px solid #fff;outline-offset:2px;box-shadow:0 0 0 5px var(--rosa)}
+main:focus{outline:none}
+section{scroll-margin-top:3.2rem}
+nav a[aria-current="true"]{background:var(--rosa);color:#fff;font-weight:700}
+.dica{display:block;margin-top:.4rem;opacity:.85}
+kbd{font:inherit;font-weight:700;border:1px solid var(--borda);border-radius:6px;padding:0 .4rem;background:rgba(255,255,255,.7)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+</style>
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+<nav aria-label="Seções">
+  <a href="#inicio">Início</a><a href="#parto">Parto</a><a href="#atuacao-vaginal">Parto vaginal</a><a href="#fases-cesarea">Parto cesárea</a>
+  <a href="#diastase">Diástase</a><a href="#puerperio">Puerpério</a><a href="#objetivos">Fisioterapia</a><a href="#avaliacao">Avaliação</a>
+  <a href="#orientacoes">Orientações</a><a href="#artigo">Artigo</a><a href="#conclusao">Conclusão</a>
+</nav>
+
+<main id="conteudo" tabindex="-1">
+
+<!-- 1. LANDING -->
+<section id="inicio" aria-label="Capa">
+  <img class="hero-eco float b par" data-par="14" src="img/ultra.webp" alt="" aria-hidden="true" width="228" height="176">
+  <img class="hero-flor float c par" data-par="-10" src="img/flor_br.webp" alt="" aria-hidden="true" width="320" height="336">
+  <div class="wrap">
+    <img class="hero-mae float par" data-par="8" src="img/mae_line.webp" alt="Ilustração de uma mãe sentada em uma poltrona com o bebê no colo" width="592" height="710" fetchpriority="high">
+    <div class="titulo">
+      <h1><span>Parto</span><span>e</span><span>Puerpério</span></h1>
+      <p>Isadora Muotri<br>Nathalia Machado</p>
+    </div>
+  </div>
+</section>
+
+<!-- 2. PARTO -->
+<section id="parto">
+  <img class="deco l" src="img/flor_lm.webp" alt="" aria-hidden="true" width="144" height="424" loading="lazy" decoding="async">
+  <div class="wrap">
+    <h2>Parto</h2>
+    <div class="duo">
+      <div class="moldura"><img src="img/mae_card.webp" alt="Ilustração de mulher com o bebê no colo" width="496" height="528" loading="lazy" decoding="async"></div>
+      <div class="card just">
+        <p>O parto é o término da gravidez, momento em que o feto e seus anexos (como a placenta) saem do organismo materno. Esse processo marca a transição do bebê do ambiente uterino para o mundo exterior.</p>
+        <p>O trabalho de parto dura em média 12 a 18 horas na primeira gravidez e tende a ficar mais breve durante 6 a 8 horas nas gestações seguintes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. FASES VAGINAL -->
+<section id="fases-vaginal">
+  <div class="wrap">
+    <h2>Fases do parto vaginal</h2>
+    <div class="fases">
+      <figure><img class="photo" src="img/p_f1.webp" alt="Primeira fase do parto vaginal" width="416" height="398" loading="lazy" decoding="async"><figcaption>Primeira fase</figcaption></figure>
+      <figure><img class="photo" src="img/p_f2.webp" alt="Segunda fase do parto vaginal" width="402" height="370" loading="lazy" decoding="async"><figcaption>Segunda fase</figcaption></figure>
+      <figure><img class="photo" src="img/p_f3.webp" alt="Terceira fase do parto vaginal" width="416" height="380" loading="lazy" decoding="async"><figcaption>Terceira fase</figcaption></figure>
+      <figure><img src="img/mulher_pink.webp" alt="Ilustração de mulher amamentando" width="440" height="436" loading="lazy" decoding="async"><figcaption>Quarta fase<br>(Greenberg)</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- 4. ATUAÇÃO VAGINAL -->
+<section id="atuacao-vaginal">
+  <img class="deco r" src="img/flor_r.webp" alt="" aria-hidden="true" width="164" height="440" loading="lazy" decoding="async">
+  <div class="wrap">
+    <h2>Atuação da fisioterapia durante o trabalho de parto vaginal</h2>
+    <div class="scroll"><table class="min">
+      <thead><tr><th>Períodos</th><th>Atuação da fisioterapia</th><th>Objetivo</th></tr></thead>
+      <tbody>
+        <tr><td>Dilatação</td><td>Orientação respiratória, massagem lombossacral, bola suíça, TENS, mudança de posição</td><td>Aliviar dor, promover relaxamento, melhorar a mobilidade pélvica e proporcionar conforto</td></tr>
+        <tr><td>Expulsivo</td><td>Orientação respiratória, auxílio no posicionamento, consciência corporal e relaxamento do AP</td><td>Favorecer conforto materno, auxiliar na coordenação respiratória e permitir posições adequadas para o nascimento</td></tr>
+        <tr><td>Dequitação</td><td>Acolhimento, orientação e auxílio no conforto materno</td><td>Proporcionar conforto e apoiar a mulher durante a saída da placenta</td></tr>
+      </tbody></table></div>
+  </div>
+</section>
+
+<!-- 5. DISFUNÇÕES VAGINAL -->
+<section id="disfuncoes-vaginal">
+  <img class="deco lb" src="img/flor_lb.webp" alt="" aria-hidden="true" width="96" height="328" loading="lazy" decoding="async">
+  <div class="wrap">
+    <h2>Principais disfunções durante o parto vaginal</h2>
+    <ul class="grid-pills">
+      <li><img src="img/check.webp" alt="" width="100" height="112" loading="lazy" decoding="async"><span>Atonia uterina</span></li><li><img src="img/check.webp" alt="" width="100" height="112" loading="lazy" decoding="async"><span>Tensão do assoalho pélvico</span></li>
+      <li><img src="img/check.webp" alt="" width="100" height="112" loading="lazy" decoding="async"><span>Diástase</span></li><li><img src="img/check.webp" alt="" width="100" height="112" loading="lazy" decoding="async"><span>Dor lombopélvica</span></li>
+      <li><img src="img/check.webp" alt="" width="100" height="112" loading="lazy" decoding="async"><span>Distocia</span></li><li><img src="img/check.webp" alt="" width="100" height="112" loading="lazy" decoding="async"><span>Alterações respiratórias</span></li>
+      <li><img src="img/check.webp" alt="" width="100" height="112" loading="lazy" decoding="async"><span>Hemorragia obstétrica</span></li><li><img src="img/check.webp" alt="" width="100" height="112" loading="lazy" decoding="async"><span>Disfunções musculares e articulares</span></li>
+      <li><img src="img/check.webp" alt="" width="100" height="112" loading="lazy" decoding="async"><span>Prolapso do cordão umbilical</span></li><li><img src="img/check.webp" alt="" width="100" height="112" loading="lazy" decoding="async"><span>Trauma perineal</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- 6. FASES CESÁREA -->
+<section id="fases-cesarea">
+  <div class="wrap">
+    <h2>Fases do parto cesárea</h2>
+    <div class="fases">
+      <figure><img class="photo" src="img/c_f1.webp" alt="Primeira fase da cesárea" width="478" height="356" loading="lazy" decoding="async"><figcaption>Primeira fase</figcaption></figure>
+      <figure><img class="photo" src="img/c_f2.webp" alt="Segunda fase da cesárea" width="388" height="336" loading="lazy" decoding="async"><figcaption>Segunda fase</figcaption></figure>
+      <figure><img class="photo" src="img/c_f3.webp" alt="Terceira fase da cesárea" width="460" height="382" loading="lazy" decoding="async"><figcaption>Terceira fase</figcaption></figure>
+      <figure><img class="photo" src="img/c_f4.webp" alt="Quarta fase da cesárea" width="392" height="408" loading="lazy" decoding="async"><figcaption>Quarta fase</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- 7. ATUAÇÃO CESÁREA -->
+<section id="atuacao-cesarea">
+  <img class="deco r" src="img/flor_r.webp" alt="" aria-hidden="true" width="164" height="440" loading="lazy" decoding="async">
+  <div class="wrap">
+    <h2>Atuação da fisioterapia durante o trabalho de parto cesárea</h2>
+    <div class="scroll"><table class="min">
+      <thead><tr><th>Períodos</th><th>Atuação da fisioterapia</th><th>Objetivo</th></tr></thead>
+      <tbody>
+        <tr><td>Pré-operatório</td><td>Orientações respiratórias, ensino de exercícios circulatórios, mobilização precoce.</td><td>Preparar a gestante para o pós-operatório, reduzir complicações associadas à imobilidade.</td></tr>
+        <tr><td>Intraoperatório</td><td>Atenção ao posicionamento materno, acompanhamento respiratório quando indicado.</td><td>Contribuir com o conforto e segurança materna, dentro das atribuições da equipe multidisciplinar.</td></tr>
+        <tr><td>Pós-operatório imediato</td><td>Respiração diafragmática, mobilização circulatória, orientações para a proteção da incisão durante a tosse</td><td>Proporcionar conforto e apoiar a mulher durante a saída da placenta</td></tr>
+      </tbody></table></div>
+  </div>
+</section>
+
+<!-- 8. DISFUNÇÕES CESÁREA -->
+<section id="disfuncoes-cesarea">
+  <img class="deco lb" src="img/flor_lb.webp" alt="" aria-hidden="true" width="96" height="328" loading="lazy" decoding="async">
+  <div class="wrap">
+    <h2>Principais disfunções durante o parto cesárea</h2>
+    <ul class="grid-pills">
+      <li><img src="img/check.webp" alt="" width="100" height="112" loading="lazy" decoding="async"><span>Náuseas e vômitos</span></li><li><img src="img/check.webp" alt="" width="100" height="112" loading="lazy" decoding="async"><span>Dor abdominal</span></li>
+      <li><img src="img/check.webp" alt="" width="100" height="112" loading="lazy" decoding="async"><span>Lesões da bexiga</span></li><li><img src="img/check.webp" alt="" width="100" height="112" loading="lazy" decoding="async"><span>Hipotensão materna</span></li>
+      <li><img src="img/check.webp" alt="" width="100" height="112" loading="lazy" decoding="async"><span>Reação anestésica</span></li><li><img src="img/check.webp" alt="" width="100" height="112" loading="lazy" decoding="async"><span>Hemorragia obstétrica</span></li>
+      <li><img src="img/check.webp" alt="" width="100" height="112" loading="lazy" decoding="async"><span>Broncoaspiração</span></li><li><img src="img/check.webp" alt="" width="100" height="112" loading="lazy" decoding="async"><span>Lesões do intestino</span></li>
+      <li><img src="img/check.webp" alt="" width="100" height="112" loading="lazy" decoding="async"><span>Atonia uterina</span></li><li><img src="img/check.webp" alt="" width="100" height="112" loading="lazy" decoding="async"><span>Complicações tromboembólicas</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- 9. DIÁSTASE -->
+<section id="diastase">
+  <img class="deco br" src="img/flor_br.webp" alt="" aria-hidden="true" width="320" height="336" loading="lazy" decoding="async">
+  <div class="wrap">
+    <h2>Diástase</h2>
+    <p class="card just" style="text-align:center">A diástase dos retos abdominais (DRA) é a separação anormal entre os dois feixes do músculo reto abdominal causada pelo estiramento e afinamento da linha alba. Do ponto de vista anatômico e biomecânico, não ocorre ruptura muscular, mas sim uma perda de tensão e integridade viscoelástica do tecido conjuntivo fibroso que une a parede anterior do abdômen.</p>
+    <img class="photo" style="max-width:520px;margin-top:1.5rem" src="img/diastase1.webp" alt="Ilustração comparando abdômen sem e com diástase" width="1042" height="432" loading="lazy" decoding="async">
+  </div>
+</section>
+
+<!-- 10. MECANISMO / SINAIS -->
+<section id="mecanismo">
+  <div class="wrap">
+    <div class="duo inv" style="align-items:start">
+      <div>
+        <h2 style="text-align:left">Mecanismo de afastamento</h2>
+        <p class="card">O aumento crônico ou agudo da pressão intra-abdominal (PIA) — somado a alterações hormonais como a ação da relaxina e do estrogênio na gestação — promove o remodelamento das fibras de colágeno. Esse processo alarga e adelgaça a linha alba, afastando as bordas mediais dos músculos retos (geralmente diagnosticado quando a distância inter-retos ultrapassa 2 cm a 2,5 cm)</p>
+      </div>
+      <div>
+        <h2 style="text-align:left">Sinais e sintomas</h2>
+        <ul class="lista">
+          <li>Abaulamento na região central do abdomen</li><li>Formação de elevação na linha média ao realizar esforço</li>
+          <li>Sensação de fraqueza abdominal</li><li>Desconforto lombar em alguns casos</li><li>Alterações no controle de tronco</li>
+          <li>Dificuldade para realizar determinados movimentos</li><li>Alterações na percepção corporal</li>
+        </ul>
+        <img class="photo" style="max-width:360px" src="img/diastase2.webp" alt="Ilustração do afastamento dos músculos retos do abdômen" width="724" height="402" loading="lazy" decoding="async">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 11. AVALIAÇÃO DIÁSTASE -->
+<section id="avaliacao-diastase">
+  <img class="deco br" src="img/flor_br.webp" alt="" aria-hidden="true" width="320" height="336" loading="lazy" decoding="async">
+  <div class="wrap">
+    <h2>Avaliação fisioterapêutica da diástase abdominal</h2>
+    <div class="duo">
+      <ul class="lista-script"><li>Anamnese</li><li>Inspeção</li><li>Palpação</li><li>Mensuração</li></ul>
+      <img class="photo" style="max-width:480px" src="img/avalia.webp" alt="Fotos da avaliação da diástase: inspeção, palpação e mensuração" width="706" height="482" loading="lazy" decoding="async">
+    </div>
+  </div>
+</section>
+
+<!-- 12. EXERCÍCIOS -->
+<section id="exercicios">
+  <div class="wrap">
+    <h2 class="sr" style="position:absolute;left:-9999px">Exercícios fisioterapêuticos e objetivos</h2>
+    <div class="scroll"><table class="min exerc">
+      <thead><tr>
+        <th>Exercícios fisioterapêuticos<img src="img/quatro_apoios.webp" alt="" width="297" height="153" loading="lazy" decoding="async"></th>
+        <th>Objetivos<img src="img/deitada.webp" alt="" width="348" height="132" loading="lazy" decoding="async"></th></tr></thead>
+      <tbody><tr>
+        <td><ul><li>Flexão cervical/torácica leve controlada</li><li>Reeducação diafragmática e expiração prolongada associada à ativação abdominal</li><li>Exercícios globais de estabilização do core e método Pilates</li><li>Treinamento dos músculos do assoalho pélvico (TMAP)</li></ul></td>
+        <td><ul><li>Recuperar o tônus e a força muscular</li><li>Melhorar a mecânica respiratória e controlar a pressão intra-abdominal</li><li>Promover estabilidade lombo-pélvica e correção postural</li><li>Restaurar a sinergia e o tônus do assoalho pélvico</li></ul></td>
+      </tr></tbody></table></div>
+  </div>
+</section>
+
+<!-- 13. PUERPÉRIO -->
+<section id="puerperio">
+  <img class="deco l" src="img/flor_lm.webp" alt="" aria-hidden="true" width="144" height="424" loading="lazy" decoding="async">
+  <div class="wrap">
+    <h2>Puerpério</h2>
+    <div class="duo">
+      <div class="moldura"><img src="img/mae_card.webp" alt="Ilustração de mulher com o bebê no colo" width="496" height="528" loading="lazy" decoding="async"></div>
+      <div class="card just">
+        <p>O puerpério é o período que se inicia imediatamente após o parto e corresponde a fase de recuperação e adaptação do organismo materno às condições pós-gestacionais.</p>
+        <p>É marcado por alterações <span class="hl">hormonais, anatômicas, fisiológicas, musculoesqueléticas, emocionais e psicossociais.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 14. FASES PUERPÉRIO -->
+<section id="fases-puerperio">
+  <img class="deco r" src="img/flor_r.webp" alt="" aria-hidden="true" width="164" height="440" loading="lazy" decoding="async">
+  <div class="wrap">
+    <h2>Fases do puerpério</h2>
+    <div class="scroll"><table class="min">
+      <thead><tr><th>Imediato<br>1° ao 10° dia</th><th>Tardio<br>11° ao 42° dia</th><th>Remoto<br>a partir de 42 dias</th></tr></thead>
+      <tbody><tr>
+        <td><ul><li>Início da involução uterina</li><li>Presença de lóquios</li><li>Recuperação inicial dos tecidos</li><li>Dor perineal ou na incisão cirúrgica</li><li>Adaptação a amamentação</li></ul></td>
+        <td><ul><li>Continuidade da involução uterina</li><li>Cicatrização progressiva</li><li>Recuperação da função abdominal e pélvica</li><li>Adaptação postural e muscular</li></ul></td>
+        <td><ul><li>Continuidade da recuperação muscular</li><li>Recuperação funcional progressiva</li><li>Retorno gradual as atividades físicas</li><li>Tratamento de disfunções persistentes</li></ul></td>
+      </tr></tbody></table></div>
+  </div>
+</section>
+
+<!-- 15. ALTERAÇÕES FISIOLÓGICAS -->
+<section id="alteracoes">
+  <div class="wrap">
+    <h2>Principais alterações fisiológicas</h2>
+    <div class="scroll"><table class="preto" style="max-width:640px;margin:auto">
+      <thead><tr><th>Estrutura/sistema</th><th>Alteração</th></tr></thead>
+      <tbody>
+        <tr><td>Útero</td><td>Involução uterina</td></tr><tr><td>Hormonal</td><td>Redução de estrogênio e progesterona</td></tr>
+        <tr><td>Mamas</td><td>Lactogênese e lactação</td></tr><tr><td>Abdômen</td><td>Alongamento e recuperação da parede abdominal</td></tr>
+        <tr><td>Assoalho pélvico</td><td>Alterações da força, resistência e coordenação</td></tr><tr><td>Circulatório</td><td>Readaptação hemodinâmica</td></tr>
+        <tr><td>Musculoesquelético</td><td>Adaptação postural e recuperação funcional</td></tr>
+      </tbody></table></div>
+  </div>
+</section>
+
+<!-- 16. DISFUNÇÕES PUERPÉRIO -->
+<section id="disfuncoes-puerperio">
+  <img class="deco lb" src="img/flor_lb.webp" alt="" aria-hidden="true" width="96" height="328" loading="lazy" decoding="async">
+  <div class="wrap">
+    <div class="duo">
+      <div style="text-align:center">
+        <img style="max-width:260px;margin:auto" src="img/mulher_sentada.webp" alt="Ilustração de mulher amamentando sentada" width="492" height="574" loading="lazy" decoding="async">
+        <h2 style="margin-top:.4em">Principais disfunções no puerpério</h2>
+      </div>
+      <ul class="pills-col">
+        <li><img src="img/check.webp" alt="" width="100" height="112" loading="lazy" decoding="async"><span>Incontinência urinária/fecal</span></li><li><img src="img/check.webp" alt="" width="100" height="112" loading="lazy" decoding="async"><span>Prolapso de órgãos pélvicos</span></li>
+        <li><img src="img/check.webp" alt="" width="100" height="112" loading="lazy" decoding="async"><span>Alterações do assoalho pélvico</span></li><li><img src="img/check.webp" alt="" width="100" height="112" loading="lazy" decoding="async"><span>Diástase dos músculos retos do abdômen</span></li>
+        <li><img src="img/check.webp" alt="" width="100" height="112" loading="lazy" decoding="async"><span>Dor lombopélvica e perineal</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 17. OBJETIVOS -->
+<section id="objetivos">
+  <img class="deco br" src="img/flor_br.webp" alt="" aria-hidden="true" width="320" height="336" loading="lazy" decoding="async">
+  <div class="wrap">
+    <h2>Objetivos da fisioterapia</h2>
+    <div class="duo">
+      <img style="max-width:240px;margin:auto" src="img/clip_roxo.webp" alt="Ilustração de uma prancheta com lista de verificação" width="364" height="480" loading="lazy" decoding="async">
+      <ul class="lista" style="font-size:1.2rem">
+        <li>Recuperar a função dos músculos do assoalho pélvico</li><li>Melhorar força, resistência e coordenação muscular</li>
+        <li>Prevenir e tratar incontinências urinária e fecal</li><li>Promover a recuperação funcional</li>
+        <li>Auxiliar na recuperação da estabilidade lombo-pélvica</li><li>Reduzir dores e limitações funcionais</li>
+        <li>Orientar o retorno seguro às atividades físicas</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 18-19. AVALIAÇÃO -->
+<section id="avaliacao">
+  <img class="deco br" src="img/flor_br.webp" alt="" aria-hidden="true" width="320" height="336" loading="lazy" decoding="async">
+  <div class="wrap">
+    <h2>Avaliação fisioterapêutica</h2>
+    <div class="duo inv" style="align-items:start;gap:2.5rem">
+      <div class="aval card">
+        <h3 style="text-align:center">Parto vaginal</h3>
+        <h4>Assoalho pélvico</h4><p>Avaliação da força, resistência e coordenação da musculatura do assoalho pélvico por meio das escalas.</p>
+        <h4>Região perineal</h4><p>Avaliação da intensidade dolorosa, integridade tecidual, sensibilidade e presença de lacerações ou episiotomia.</p>
+        <h4>Musculatura abdominal</h4><p>Avaliação da distância inter-retos, tensão da linha alba e função da parede abdominal.</p>
+        <h4>Continência urinária e fecal</h4><p>Investigação de incontinência urinária e anal, urgência miccional e alterações do controle esfincteriano.</p>
+      </div>
+      <div class="aval card">
+        <h3 style="text-align:center">Parto cesárea</h3>
+        <h4>Cicatriz cirúrgica</h4><p>Inspeção da cicatrização, integridade tecidual, sensibilidade e mobilidade cicatricial.</p>
+        <h4>Dor abdominal</h4><p>Avaliação da intensidade pela EVA e investigação da dor durante movimentos.</p>
+        <h4>Musculatura abdominal</h4><p>Avaliação da ativação muscular, controle motor e estabilidade do tronco.</p>
+        <h4>Diástase abdominal</h4><p>Mensuração da distância inter-retos e avaliação da tensão da linha alba.</p>
+      </div>
+    </div>
+    <img style="max-width:300px;margin:1.5rem auto 0" src="img/medica.webp" alt="Ilustração de fisioterapeuta conversando com uma paciente" width="522" height="456" loading="lazy" decoding="async">
+  </div>
+</section>
+
+<!-- 20. INSTRUMENTOS -->
+<section id="instrumentos">
+  <img class="deco l" src="img/flor_tl.webp" alt="" aria-hidden="true" style="top:0;width:min(165px,24vw)" width="330" height="256" loading="lazy" decoding="async">
+  <div class="wrap">
+    <h2>Instrumentos de avaliação</h2>
+    <dl class="inst">
+      <dt>• Oxford:</dt><dd>Força muscular</dd><dt>• PERFECT:</dt><dd>Desempenho muscular</dd>
+      <dt>• ICIQ-SF:</dt><dd>Incontinência urinária</dd><dt>• POP-Q:</dt><dd>Prolapso pélvico</dd>
+      <dt>• EVA:</dt><dd>Intensidade da dor</dd><dt>• Paquímetro:</dt><dd>Diástase abdominal</dd>
+    </dl>
+  </div>
+</section>
+
+<!-- 21. ORIENTAÇÕES -->
+<section id="orientacoes">
+  <div class="wrap">
+    <h2>Orientações</h2>
+    <div class="orient">
+      <div><img src="img/or_bola.webp" alt="" width="174" height="304" loading="lazy" decoding="async"><p>Ensinar a reconhecer a musculatura do assoalho pélvico.<br>Orientar contração e relaxamento quando indicados.<br>Avaliar sintomas de incontinência urinária e fecal.</p></div>
+      <div><img src="img/or_medit.webp" alt="" width="176" height="265" loading="lazy" decoding="async"><p>Orientar respiração diafragmática.<br>Trabalhar a percepção e o controle da musculatura abdominal.<br>Progredir os exercícios de fortalecimento conforme a recuperação.</p></div>
+      <div><img src="img/or_azul.webp" alt="" width="136" height="312" loading="lazy" decoding="async"><p>Retomar exercícios de fortalecimento gradualmente.<br>Evitar aumento brusco da intensidade.<br>Observar dor, sangramento e sensação de peso vaginal durante as atividades.</p></div>
+      <div><img src="img/or_ruiva.webp" alt="" width="241" height="247" loading="lazy" decoding="async"><p>Evitar exercícios que provoquem dor ou tensão excessiva na região em recuperação.<br><strong>Cesárea:</strong> orientar observação da cicatriz e respeito às recomendações de cuidados<br><strong>Parto vaginal</strong>: orientar cuidados com o períneo, principalmente quando houver laceração ou episiotomia.</p></div>
+      <div><img src="img/or_mae.webp" alt="" width="200" height="240" loading="lazy" decoding="async"><p>Postura durante a amamentação.<br>Ao pegar o bebê no berço.<br>Carregar o bebê<br>Transferências</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 22. CONTRAINDICAÇÃO -->
+<section id="contraindicacao">
+  <img class="deco r" src="img/flor_r2.webp" alt="" aria-hidden="true" width="96" height="340" loading="lazy" decoding="async">
+  <div class="wrap">
+    <h2>Contraindicação</h2>
+    <div class="duo inv">
+      <div>
+        <p style="font-family:Georgia,serif;font-weight:700;color:var(--rosa);font-size:1.15rem">Condições que contraindicam ou exigem liberação médica para exercícios moderados a rigorosos.</p>
+        <ul class="lista" style="font-size:1.2rem">
+          <li>Hemorragia puerperal ou sangramento vaginal anormal.</li><li>Infecção puerperal sistêmica acompanhada de febre e comprometimento do estado geral.</li>
+          <li>Hipertensão arterial não controlada.</li><li>Cardiomiopatia periparto.</li><li>Anemia sintomática ou fadiga excessiva.</li>
+        </ul>
+      </div>
+      <img style="max-width:230px;margin:auto" src="img/menina.webp" alt="Ilustração de menina com uma lupa" width="388" height="460" loading="lazy" decoding="async">
+    </div>
+  </div>
+</section>
+
+<!-- 23. ARTIGO -->
+<section id="artigo">
+  <img class="deco l" src="img/flor_lt23.webp" alt="" aria-hidden="true" width="194" height="420" loading="lazy" decoding="async">
+  <div class="wrap">
+    <h2 style="font-family:Georgia,serif;font-weight:400;font-style:normal">Artigo escolhido</h2>
+    <div class="artigo-comp">
+      <div class="lang-toggle" role="group" aria-label="Idioma da captura do artigo" hidden>
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="pt" aria-pressed="false">PT-BR</button>
+      </div>
+      <figure data-lang="en">
+        <img class="artigo-img" src="img/artigo.webp" alt="Captura da página do artigo na revista Frontiers in Medicine, em inglês (original)" width="1424" height="800" loading="lazy" decoding="async">
+        <figcaption lang="en">EN</figcaption>
+      </figure>
+      <figure data-lang="pt">
+        <img class="artigo-img" src="img/artigo_pt.webp" alt="Mesma captura da página do artigo, com o texto traduzido para português do Brasil" width="1424" height="800" loading="lazy" decoding="async">
+        <figcaption>PT-BR</figcaption>
+      </figure>
+    </div>
+    <p class="ref">Hu, Zhuo-Ya et al. “The efficacy and safety of transcutaneous electrical nerve stimulation for labor analgesia in the first stage of labor: a qualitative and quantitative analysis.” Frontiers in medicine vol. 13 1730360. 27 Jan.</p>
+  </div>
+</section>
+
+<!-- 24. SOBRE O ARTIGO -->
+<section id="sobre-artigo">
+  <img class="deco l" src="img/flor_lt24.webp" alt="" aria-hidden="true" width="200" height="634" loading="lazy" decoding="async">
+  <div class="wrap" style="max-width:760px">
+    <h2>Sobre o artigo</h2>
+    <div class="card just">
+      <p>Essa revisão apresenta resultados promissores sobre o uso do TENS no alívio da dor durante o trabalho de parto, reforçando seu potencial como recurso complementar na fisioterapia obstétrica.</p>
+      <p><strong style="font-weight:400">Principais resultados:</strong></p>
+      <ul class="lista">
+        <li>O TENS demonstrou potencial para reduzir a intensidade da dor durante o trabalho de parto.</li>
+        <li>Pode contribuir para diminuir a duração da primeira fase do parto.</li>
+        <li>Apresentou boa segurança, sem aumento significativo de efeitos adversos.</li>
+        <li><strong>Certeza da evidência.</strong> Os próprios autores classificam a qualidade da evidência como <strong>baixa</strong> (low-certainty evidence), o que exige cautela antes de concluir que o TENS substitui a analgesia peridural em termos de potência analgésica</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 25. CONCLUSÃO -->
+<section id="conclusao" class="conclusao">
+  <img class="deco l" src="img/flor_lt25.webp" alt="" aria-hidden="true" width="252" height="660" loading="lazy" decoding="async">
+  <img class="deco br" src="img/mae_line2.webp" alt="" aria-hidden="true" style="width:min(170px,30vw)" width="350" height="376" loading="lazy" decoding="async">
+  <div class="wrap">
+    <h2>Conclusão</h2>
+    <p>A fisioterapia tem um papel fundamental no parto e puerpério, promovendo conforto, prevenção de disfunções e recuperação funcional. Por meio de orientações e exercícios específicos, contribuem para a saúde, bem-estar e qualidade de vida da mulher em uma fase tão importante.</p>
+  </div>
+</section>
+
+</main>
+<footer>Isadora Muotri · Nathalia Machado<span class="dica">Dica: use as setas <kbd>←</kbd> <kbd>→</kbd> para ir de uma seção à outra.</span></footer>
+
+<script>
+// Paralaxe leve do mouse — apenas na landing (#inicio)
+(function(){
+  var hero=document.getElementById('inicio');
+  if(!hero||matchMedia('(prefers-reduced-motion: reduce)').matches||!matchMedia('(hover:hover)').matches)return;
+  var els=hero.querySelectorAll('.par'),raf=0;
+  hero.addEventListener('mousemove',function(e){
+    var r=hero.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+    cancelAnimationFrame(raf);
+    raf=requestAnimationFrame(function(){els.forEach(function(el){
+      var d=parseFloat(el.dataset.par)||6;el.style.translate=(x*d).toFixed(1)+'px '+(y*d).toFixed(1)+'px';});});
+  });
+  hero.addEventListener('mouseleave',function(){els.forEach(function(el){el.style.translate='';});});
+})();
+
+// Alternar idioma da captura do artigo (sem JS, as duas versões aparecem empilhadas)
+(function(){
+  var box=document.querySelector('.artigo-comp');
+  if(!box)return;
+  var tog=box.querySelector('.lang-toggle'),btns=tog.querySelectorAll('button'),figs=box.querySelectorAll('figure');
+  function set(lang){
+    figs.forEach(function(f){f.hidden=f.dataset.lang!==lang;});
+    btns.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.lang===lang?'true':'false');});
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.lang);});});
+  tog.hidden=false;
+  set('en');
+})();
+
+// Destaque do link da seção atual na navegação (aria-current)
+(function(){
+  var nav=document.querySelector('nav');
+  if(!nav||!('IntersectionObserver' in window))return;
+  var links={};nav.querySelectorAll('a[href^="#"]').forEach(function(a){links[a.getAttribute('href').slice(1)]=a;});
+  var secs=[].slice.call(document.querySelectorAll('main > section'));
+  var owner={},last=null;
+  secs.forEach(function(s){if(links[s.id])last=s.id;owner[s.id]=last;});
+  function mark(id){
+    var key=owner[id];
+    Object.keys(links).forEach(function(k){
+      if(k===key){links[k].setAttribute('aria-current','true');
+        var l=links[k],n=nav;if(l.offsetLeft<n.scrollLeft||l.offsetLeft+l.offsetWidth>n.scrollLeft+n.clientWidth){n.scrollTo({left:l.offsetLeft-24});}
+      }else links[k].removeAttribute('aria-current');
+    });
+  }
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting&&e.target.id)mark(e.target.id);});
+  },{rootMargin:'-40% 0px -55% 0px'});
+  secs.forEach(function(s){io.observe(s);});
+})();
+
+// Setas ← → pulam de seção em seção (como slides)
+(function(){
+  var secs=[].slice.call(document.querySelectorAll('main > section'));
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches,lastIdx=0,lastTime=0;
+  document.addEventListener('keydown',function(e){
+    if(e.key!=='ArrowRight'&&e.key!=='ArrowLeft')return;
+    if(e.altKey||e.ctrlKey||e.metaKey||e.shiftKey||e.defaultPrevented)return;
+    var el=e.target;
+    if(el.closest&&el.closest('input,textarea,select,[contenteditable],.lang-toggle,nav'))return;
+    var i;
+    if(Date.now()-lastTime<900){          // pressionou de novo durante a rolagem: parte do destino anterior
+      i=lastIdx+(e.key==='ArrowRight'?1:-1);
+    }else{
+      var tops=secs.map(function(s){return s.getBoundingClientRect().top;});
+      if(e.key==='ArrowRight'){i=tops.findIndex(function(t){return t>60;});}
+      else{i=-1;tops.forEach(function(t,k){if(t<-20)i=k;});}
+    }
+    if(i<0||i>=secs.length)return;
+    e.preventDefault();
+    lastIdx=i;lastTime=Date.now();
+    secs[i].scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});
+  });
+})();
+</script>
+</body>
+</html>
